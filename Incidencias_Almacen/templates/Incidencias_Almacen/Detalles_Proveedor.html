@@ -10,15 +10,14 @@
 <main>
     <section class="principal">
         <h2> Información de Contacto </h2>
-        <h3> Email:   </h3>
-        <h3> Sitio Web: </h3>
-        <h3> Dirección Fiscal:  </h3>
+        <h3> Empresa: {{ proveedor.nombre_comercial }}  </h3>
+        <h3> Teléfono: {{ proveedor.telefono }} </h3>
+        <h3> Email: {{ proveedor.email }}  </h3>
+        <h3> Dirección: {{ proveedor.direccion }}  </h3>
     </section>
     <section class="legal">
         <h2> Datos Legales </h2>
-        <h3> CIF: </h3>
-        <h3> Plazo de Entrega: </h3>
-        <h3> Condiciones de Pago: </h3>
+        <h3> CIF: {{ proveedor.cif }} </h3>
     </section>
 </main>
 {%endblock%}

@@ -11,18 +11,18 @@
 <main>
     <div class="info">
         <section class="nom">
-            <h2> Aqui va el nombre</h2> 
-            <h2> Aqui va el codigo </h2>
+            <h2> {{ material.nombre }} </h2> 
+            <h2> Código: {{ material.codigo_interno }} </h2>
         </section>
         <section class="dscrp">
-            <p> Aqui va la descripcion extensa </p>
+            <p> {{ material.descripcion }} </p>
         </section>
     
     </div>
     <div class="extra">
-     <h3> Aqui va la Familia</h3>
-     <h3> Aqui va la Ubicacion</h3>
-     <h3> Aqui va el Proveedor</h3>
+     <h3> Familia: {{ material.familia }}</h3>
+     <h3> Ubicación: {{ material.ubicacion_habitual }}</h3>
+     <h3> Proveedor: {{ material.proveedor_principal|default:"Ninguno" }}</h3>
     </div>
 </main>
 {%endblock%}

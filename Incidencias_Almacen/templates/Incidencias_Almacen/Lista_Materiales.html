@@ -16,12 +16,20 @@
             </tr>
         </thead>
         <tbody>
+            {% for material in materiales %}
             <tr>
-                <td> -- </td> <td> -- </td>  <td> -- </td> <td> -- </td> <td> -- </td> <td> <span class="ac">  Detalles </span> <span class="acc" > quitar </span> </td>
+                <td> {{ material.codigo_interno }} </td> 
+                <td> {{ material.nombre }} </td>  
+                <td> {{ material.familia }} </td> 
+                <td> {{ material.ubicacion_habitual }} </td> 
+                <td> {{ material.proveedor_principal|default:"-" }} </td> 
+                <td> 
+                    <a href="{% url 'DetalleM' material.pk %}" class="ac">  Detalles </a> 
+                </td>
             </tr>
-            <tr>
-                <td> -- </td> <td> -- </td> <td> -- </td> <td> -- </td> <td> -- </td> <td>  <span class="ac">  Detalles </span> <span class="acc" > quitar </span>  </td>
-            </tr>
+            {% empty %}
+            <tr><td colspan="6">No hay materiales registrados.</td></tr>
+            {% endfor %}
         </tbody>
     </table>
 </main>

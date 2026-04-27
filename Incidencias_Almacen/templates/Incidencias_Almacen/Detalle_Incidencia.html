@@ -12,44 +12,39 @@
 <main>
     <section class="info">
         <div class="divi">
-            <h2 id="ID"> El ID </h2>
+            <h2 id="ID"> Incidencia #{{ incidencia.codigo }} </h2>
         </div>
         <div class="divi">
-            <h2 id="nombre"> Nombre </h2>
-            <p id="dscrp"> Aqui va la descripción  </p>
+            <h2 id="nombre"> {{ incidencia.titulo }} </h2>
+            <p id="dscrp"> {{ incidencia.descripcion_detallada }} </p>
         </div>
     </section>
     <section class="cuando">
          <div class="divi">
             <h2> Operario </h2>
-            <p> Aqui va el operario</p>
-        <p> Codigo de Chapa</p>
+            <p> {{ incidencia.operario_asignado|default:"No signado" }} </p>
         </div>
         <div class="divi">
             <h2> DateTime de Reporte </h2>
-            <p> Aqui va el Datetime </p>
+            <p> {{ incidencia.fecha_alta|date:"d/m/Y H:i" }} </p>
         </div>
         <div class="divi">
-            <h2> Ubicacion</h2>
-            <p> Aqui va el donde</p>
+            <h2> Ubicación</h2>
+            <p> {{ incidencia.zona_almacen }}</p>
         </div>
     </section>
     <section class="extra">
          <div class="divi">
             <h2> Material Afectado </h2>
-            <p> Aqui va el material Afectado</p>
+            <p> {{ incidencia.material_afectado|default:"Ninguno" }}</p>
         </div>
-        <div class = 'divi'> 
-            <h2> Gravedad </h2>
-            <p> Alta/Media/Baja </p>
+        <div class="divi"> 
+            <h2> Prioridad </h2>
+            <p> {{ incidencia.get_nivel_prioridad_display }} </p>
         </div>
         <div class="divi"> 
             <h2> Estado </h2>
-            <p> Pendiente o Realizandose</p>
-        </div>
-        <div class="divi">
-            <h2> Acciones</h2>
-            <p> Acciones a Realizar/Realizandose</p>
+            <p> {{ incidencia.get_estado_display }}</p>
         </div>
     </section>
 </main>

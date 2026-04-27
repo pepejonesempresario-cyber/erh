@@ -10,11 +10,21 @@
 
 <main>
     <table>
-        <thead> <tr> <th> CIF </th> <th> Empresa </th> <th> Persona de Contacto</th> <th> Telefono </th> <th> Acciones </th></thead>
+        <thead> <tr> <th> CIF </th> <th> Empresa </th> <th> Email </th> <th> Telefono </th> <th> Acciones </th></thead>
         <tbody>
+            {% for proveedor in proveedores %}
             <tr> 
-                <td> 1234</td> <td> Recorcholis </td> <td> Jaime Marca </td> <td> 662612712</td>  <td> <span class="ac">  Detalles </span> <span class="acc" > quitar </span> </td> 
+                <td> {{ proveedor.cif }}</td> 
+                <td> {{ proveedor.nombre_comercial }} </td> 
+                <td> {{ proveedor.email }} </td> 
+                <td> {{ proveedor.telefono }}</td>  
+                <td> 
+                    <a href="{% url 'DetallesP' proveedor.pk %}" class="ac">  Detalles </a> 
+                </td> 
             </tr>
+            {% empty %}
+            <tr><td colspan="5">No hay proveedores registrados.</td></tr>
+            {% endfor %}
         </tbody>
     </table>
 </main>
