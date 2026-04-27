@@ -1,0 +1,58 @@
+{% extends 'Incidencias_Almacen/base.html' %}
+{% load static %}
+
+{%block cod_css%}
+<link href="{%static 'Incidencias_Almacen/css/Detalle_Incidencia.css'%}" rel="stylesheet"/>
+{%endblock%}
+
+{%block h1_titulo%} Detalles de Incidencia {%endblock%}
+{%block p_texto%} <a href="{%url 'DashBoard'%}"> Dashboard </a>  {%endblock%}
+
+{%block content%}
+<main>
+    <section class="info">
+        <div class="divi">
+            <h2 id="ID"> El ID </h2>
+        </div>
+        <div class="divi">
+            <h2 id="nombre"> Nombre </h2>
+            <p id="dscrp"> Aqui va la descripción  </p>
+        </div>
+    </section>
+    <section class="cuando">
+         <div class="divi">
+            <h2> Operario </h2>
+            <p> Aqui va el operario</p>
+        <p> Codigo de Chapa</p>
+        </div>
+        <div class="divi">
+            <h2> DateTime de Reporte </h2>
+            <p> Aqui va el Datetime </p>
+        </div>
+        <div class="divi">
+            <h2> Ubicacion</h2>
+            <p> Aqui va el donde</p>
+        </div>
+    </section>
+    <section class="extra">
+         <div class="divi">
+            <h2> Material Afectado </h2>
+            <p> Aqui va el material Afectado</p>
+        </div>
+        <div class = 'divi'> 
+            <h2> Gravedad </h2>
+            <p> Alta/Media/Baja </p>
+        </div>
+        <div class="divi"> 
+            <h2> Estado </h2>
+            <p> Pendiente o Realizandose</p>
+        </div>
+        <div class="divi">
+            <h2> Acciones</h2>
+            <p> Acciones a Realizar/Realizandose</p>
+        </div>
+    </section>
+</main>
+{%endblock%}
+
+

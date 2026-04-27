@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deusto Logistics</title>
+    <link href="{% static 'Incidencias_Almacen/css/Base.css'%}" rel="stylesheet"/>
+
+    {% block cod_css %} {%endblock%}
+
+</head>
+<body>
+    <header> 
+        <h1>{%block h1_titulo %} Titulo {%endblock%} </h1>
+        <p> {%block p_texto %} P por default {%endblock%} </p>   
+    </header>
+
+    {%block content%}
+    {% endblock %}
+    
+    <footer>
+        <div class="uno">
+            <img src="{% static 'Incidencias_Almacen/img/deusto.png' %}"/>
+        </div>
+        <div class="dos">
+            <p> Deusto Logistics </p>
+            <p> Control de Incidencias de Almacen </p>
+        </div>
+        <div class="tres"> 
+            <img src="{% static 'Incidencias_Almacen/img/warning.png' %}"/>
+        </div>
+    </footer>
+</body>
+</html>
