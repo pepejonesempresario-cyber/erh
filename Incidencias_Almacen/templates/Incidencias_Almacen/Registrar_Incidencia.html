@@ -1,0 +1,84 @@
+{% extends 'Incidencias_Almacen/base.html' %}
+{% load static %}   
+
+{%block cod_css%}
+    <link href ="{% static 'Incidencias_Almacen/css/Registrar_Incidencia.css' %}" rel="stylesheet"/>
+{%endblock%}
+
+
+{% block h1_titulo%} Registrar Incidencia {% endblock %}
+{%block p_texto%} <a href="{%url 'DashBoard'%}"> Dashboard </a>  {%endblock%}
+
+{%block content%}
+
+<main>
+    <form method="post">
+        {% csrf_token %}
+        <section class="info">
+
+            <h2> Información Principal </h2>
+            <label for="Asunto"> Titulo/Asunto </label>
+            <input type="text" maxlength="100" required name="Asunto" class="inp" id="Asunto">
+
+            <label for="cod"> Código </label>
+            <input type="number" max="10000" required name="cod" class="inp" id="cod">
+
+
+            <label for="dscrp"> Descripción </label>
+            <textarea name="dscrp" rows="20" cols="40" id="dscrp"> Poner Descripción</textarea>
+        </section>
+        <section class="selects">
+        <h2> Información Adicional </h2>
+        <div>
+            <Label for="material"> Material Afectado </Label>
+            <select name="material" required id="material">
+                <option> Material 1 </option>
+                <option> Material 2 </option>
+                <option> Material 3 </option>
+                <option> Material 4 </option>
+                <option> Material 5 </option>
+                <option> Material 6 </option>
+                <option> Material 7 </option>
+                <option> Material 8 </option>
+                <option> Material 9 </option>
+                <option> Material 10 </option>
+            </select>
+        </div>
+        <div>
+            <label for="Prioridad"> Prioridad</label>
+            <select name="Prioridad" required id="Prioridad">
+                <option> Alta </option>
+                <option> Media </option>
+                <option> Baja</option>
+            </select>
+        </div>
+        <div>
+            <label for="zona"> Zona de Almacen </label>
+            <select name="zona" required id="zona">
+                <option> Zona 1</option>
+                <option> Zona 2</option>
+                <option> Zona 3</option>
+                <option> Zona 4</option>
+                <option> Zona 5</option>
+                <option> Zona 6</option>
+                <option> Zona 7</option>
+                <option> Zona 8</option>
+                <option> Zona 9</option>
+                <option> Zona 10</option>
+            </select>
+        </div>
+        <div>
+            <label for="nmb"> Nombre y Apellido </label>
+            <input type="text" maxlength="100" class="inp" required id="nmb">
+        </div>
+        <div>
+            <label for="operario"> Codigo de Operario </label>
+            <input type="number" name="operario" required class="inp" id="operario">
+        </div>
+            <input type="submit" name="sbmt" value="Registrar" id="btn">
+    </section>
+    </form>
+</main>
+
+
+{%endblock%}

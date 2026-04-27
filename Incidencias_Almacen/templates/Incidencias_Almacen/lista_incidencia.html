@@ -1,0 +1,37 @@
+
+{% extends 'Incidencias_Almacen/base.html' %}
+{% load static %}
+
+    {%block cod_css%}
+    <link href="{%static 'Incidencias_Almacen/css/lista_incidencia.css'%}" rel="stylesheet"/>
+    {%endblock%}
+    {% block h1_titulo%} Lista Incidencias  {% endblock %}
+    {% block p_texto%} <a href="{% url 'DashBoard'%}">  Dashboard  </a> {% endblock%}
+
+    {%block content%}
+    <div id="contenido">
+    <main>
+    <h2> Incidencias </h3>
+    <table>
+        <thead> 
+            <tr> 
+                <th> ID </th> <th> Fecha </th> <th> Gravedad</th> <th> Estado </th> <th> Accion </th> 
+            </tr>
+        </thead>
+        <tbody id="incd">
+            <tr> <td> -- </td> <td> -- </td> <td> -- </td> <td> -- </td> <td> <span class="ac">  Detalles </span> <span class="acc" > quitar </span> </td> </tr>
+            <tr> <td> -- </td> <td> -- </td> <td> -- </td> <td> -- </td> <td> <span class="ac">  Detalles </span> <span class="acc" > quitar </span> </td> </tr>
+
+        </tbody>
+    </table>
+    </main>
+    <aside>
+    <h2> Número de Incidencias </h3>
+    <table>
+        <thead> <tr> <th> -- </th>  <th> Baja </th> <th> Media </th> <th> Alta </th> </tr></thead>
+        <tbody> <tr> <td> <span id="num"> Num-Incidencias </span> </td>  <td> 0 </td> <td> 0 </td> <td> 0 </td></tr></tbody>
+    </table>
+    </aside>
+    </div>
+    {%endblock%}
+    

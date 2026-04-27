@@ -1,0 +1,45 @@
+
+main{
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+table{
+width: 85%;
+justify-content: center;
+align-items: center;
+border-collapse: collapse;
+margin: 25px auto;
+border: 5px solid black;
+background-color: ghostwhite;
+border-radius: 10px;
+text-align: center;
+box-shadow: 4px 4px black;
+}
+th{
+font-size: 28px;
+font-weight: bold;
+border-bottom: 3px solid black;
+padding: 10px 55px;
+}
+tr{
+line-height: 2;
+
+}
+td{
+font-size: 20px;
+}
+.acc ,.ac{
+display: flex;
+flex-direction: column;
+}
+.acc:hover , .ac:hover{ 
+background-color: red;
+font-weight: bold;
+transition: 0.2s ease-in;
+border-radius: 20px;
+cursor: pointer;
+}
+.ac:hover{
+background-color: lightgreen;
+}

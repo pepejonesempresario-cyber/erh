@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Borrado</title>
+    <link href="{% static 'Incidencias_Almacen/css/confirmar_borrado.css'%}" rel="stylesheet"/>
+</head>
+<body>
+  
+    
+    <header> <h1> Estas Seguro de que quieres eliminar este elemento? </h1> </header>
+
+    <main>
+        <div id="contenido">
+            <form method="post">
+                {% csrf_token %}
+                <img src="{% static 'Incidencias_Almacen/img/warningsign.jpg'%}"/>
+                <input type="submit" value="BORRAR" id="sbm">
+            </form>
+
+            <div class="foot">
+                <img src="{% static 'Incidencias_Almacen/img/warning.png' %}"/>
+                <p> <a href="{% url 'DashBoard'%}"> NO , Volver al DashBoard  </a></p>
+                <img src="{% static 'Incidencias_Almacen/img/warning.png' %}"/>
+            </div>
+
+        </div>
+   
+    </main>
+</body>
+</html>

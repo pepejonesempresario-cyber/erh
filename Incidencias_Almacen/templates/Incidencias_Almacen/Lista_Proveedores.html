@@ -1,0 +1,21 @@
+{% extends 'Incidencias_Almacen/Base.html'%}
+{% load static %}
+
+{% block cod_css%} <link href="{% static 'Incidencias_Almacen/css/Lista_Proveedores.css'%}" rel="stylesheet"/> {%endblock%}
+
+{% block h1_titulo %} Lista de Proveedores {% endblock %}
+{% block p_texto %} <a href="{% url 'DashBoard'%}"> DashBoard </a> {%endblock%}
+
+{%block content%}
+
+<main>
+    <table>
+        <thead> <tr> <th> CIF </th> <th> Empresa </th> <th> Persona de Contacto</th> <th> Telefono </th> <th> Acciones </th></thead>
+        <tbody>
+            <tr> 
+                <td> 1234</td> <td> Recorcholis </td> <td> Jaime Marca </td> <td> 662612712</td>  <td> <span class="ac">  Detalles </span> <span class="acc" > quitar </span> </td> 
+            </tr>
+        </tbody>
+    </table>
+</main>
+{%endblock%}

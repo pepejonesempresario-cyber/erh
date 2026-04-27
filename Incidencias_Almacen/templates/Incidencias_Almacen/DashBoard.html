@@ -1,0 +1,35 @@
+{% extends 'Incidencias_Almacen/base.html' %}
+{% load static %}
+
+{%block cod_css%} 
+    <link href="{% static 'Incidencias_Almacen/css/Dashboard.css'%}" rel="stylesheet"> 
+{%endblock%}
+
+{% block h1_titulo%} Dashboard {% endblock %}
+{% block p_texto%} Menu de Navegacion {% endblock%}
+
+{% block content %}
+    <main> 
+        <nav>
+            <h2>Incidencias</h2>
+            <ul>
+               <li> <a href="{% url 'Listado'%}"> Listado de Incidencias </a></li>
+               <li> <a href="{% url 'Detalles'%}"> Detalles de Incidencias </a></li> 
+               <li> <a href="{% url 'Registrar'%}"> Registrar Incidencia </a></li> 
+            </ul>
+            <h2> Materiales </h2>
+            <ul>
+                <li> <a href="{% url 'Lista_Material'%}"> Lista Materiales </a> </li>
+                <li> <a href="{% url 'DetalleM'%}"> Detalle Material </li>
+                <li> <a href="{% url 'RegistrarM'%}"> Registrar Material</a></li>
+            </ul>
+            <h2> Proveedores </h2>
+            <ul>
+                <li> <a href="{% url 'Lista_Proveedor'%}"> Lista de Proveedores </a></li>
+                <li> <a href="{% url 'DetallesP'%}"> Detalles de Proveedores </a> </li>
+                <li> <a href="{% url 'RegistrarP'%}"> Registrar Proveedor </a></li>
+            </ul>
+        </nav>
+    </main>
+
+{% endblock %}
